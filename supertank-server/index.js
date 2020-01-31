@@ -4,7 +4,7 @@ var io = require('socket.io')(http);
 var uuidv4 = require('uuid/v4');
 
 var rooms = [];
-const maxClientNumber = 2;
+const maxClientNumber = 2;     // 클라이언트 최대수
 
 io.on('connection', function(socket) {
     console.log('connected');

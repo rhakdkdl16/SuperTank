@@ -7,8 +7,9 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] Transform targetObject;                        // 타겟 포인트
     [SerializeField] GameObject tankPrefab;                         // 탱크 Prefab
+    [SerializeField] GameObject PlayerTankMaker;
 
-    private Tank playerTank;                                        // 플레이어 탱크
+    [HideInInspector] public Tank playerTank;                                        // 플레이어 탱크
     private Dictionary<string, Tank> otherTanks = new Dictionary<string, Tank>();   // 상대방 탱크들
 
     private float maxWidth = 100f;
@@ -150,6 +151,12 @@ public class GameController : MonoBehaviour
         data.AddField("position", positionData);
 
         socket.Emit("req_createtank", data);
+
+        
+        //GameObject maker =  Instantiate(PlayerTankMaker, playerTank.transform);
+        //var a = Camera.main.WorldToScreenPoint(playerTank.transform.position);
+        //maker.transform.position = a;
+
     }
 
     private Tank CreateTank(Vector3 position)
