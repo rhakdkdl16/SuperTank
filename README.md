@@ -27,7 +27,7 @@ supertank-server 폴더를 VSCode로 실행후 서버를 구동시켜주세요
 
 ![tankMax](https://user-images.githubusercontent.com/54298426/73512427-ef2a5480-442c-11ea-8e77-5af95b108e0b.PNG)
 
-입장가능한 클라이언트수를 증가시키려면 index.js 파일의 
+입장가능한 클라이언트수를 증가시키려면 index.js 파일의 \n
 maxClientNumber 의 숫자를 원하는 클라이언트의수만큼 바꿔주세요.
 
 ---
