@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     [SerializeField] Transform targetObject;                        // 타겟 포인트
     [SerializeField] GameObject tankPrefab;                         // 탱크 Prefab
     [SerializeField] GameObject PlayerTankMaker;
-
+    [SerializeField] GameObject canvas;
     [HideInInspector] public Tank playerTank;                                        // 플레이어 탱크
     private Dictionary<string, Tank> otherTanks = new Dictionary<string, Tank>();   // 상대방 탱크들
 
@@ -151,6 +151,9 @@ public class GameController : MonoBehaviour
         data.AddField("position", positionData);
 
         socket.Emit("req_createtank", data);
+
+        playerTank.tag = "PLAYER";
+        Instantiate(PlayerTankMaker,canvas.transform);
 
         
         //GameObject maker =  Instantiate(PlayerTankMaker, playerTank.transform);
