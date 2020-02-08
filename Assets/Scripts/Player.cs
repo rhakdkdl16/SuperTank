@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
-    RectTransform canvas;
     Transform tr;
     private void Awake()
     {
@@ -15,7 +14,6 @@ public class Player : MonoBehaviour
     {
         Vector3 Pos;
         Pos = Camera.main.WorldToScreenPoint(tr.position);
-        //RectTransformUtility.ScreenPointToWorldPointInRectangle(canvas,)
         gameObject.transform.position = new Vector3(Pos.x,Pos.y + 60 , Pos.z);
     }
 }
