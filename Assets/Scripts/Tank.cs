@@ -39,8 +39,7 @@ public class Tank : MonoBehaviour
         Vector3 dirRot = TargetPosition - transform.position;
         Quaternion targetRot = Quaternion.LookRotation(dirRot);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, 
-                                                targetRot, rotSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, rotSpeed * Time.deltaTime);
         transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
     }
 }
